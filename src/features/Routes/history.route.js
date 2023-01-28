@@ -9,7 +9,9 @@ historyRouter.post("/", async (req, res) => {
   res.send("added");
 });
 historyRouter.get("/", async (req, res) => {
-  let data = await historyData.find({});
+  const { authorization } = req.headers;
+
+  let data = await historyData.find({ email: authorization }).limit(6);
   res.send(data);
 });
 

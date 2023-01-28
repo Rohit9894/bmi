@@ -20,6 +20,7 @@ userRouter.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await userData.findOne({ email });
+
     if (user) {
       if (password === user.password) {
         res.send({ msg: "login successful", name: user.name, email });
