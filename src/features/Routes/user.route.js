@@ -22,7 +22,7 @@ userRouter.post("/login", async (req, res) => {
     const user = await userData.findOne({ email });
     if (user) {
       if (password === user.password) {
-        res.send("successful login");
+        res.send({ msg: "login successful", name: user.name, email });
       } else {
         res.send({ msg: "incorrect password" });
       }
