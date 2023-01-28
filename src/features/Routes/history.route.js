@@ -1,5 +1,5 @@
 const express = require("express");
-const app = require("../../../../PractiseSeries/Solutions/Calculator/Backend/Routes/emi.route");
+
 const historyData = require("../Models/history.model");
 const historyRouter = express.Router();
 
